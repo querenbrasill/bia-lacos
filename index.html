@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bia Laços | Um mundo de delicadeza</title>
+  <meta name="description" content="Conheça as coleções de laços, tiaras e acessórios da Bia Laços.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --pink: #f72585;
+      --pink-dark: #c91865;
+      --pink-light: #ffd6e8;
+      --pink-pale: #fff8fb;
+      --yellow: #fff0a6;
+      --text: #713b53;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--pink-pale);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* CABEÇALHO */
+
+    header {
+      background: linear-gradient(
+        135deg, #ffd6e8, #ffadd0, #fff0a6
+      );
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 4px solid var(--pink);
+    }
+
+    header h1 {
+      font-family: Georgia, serif;
+      font-size: 50px;
+      color: var(--pink);
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 0 white;
+    }
+
+    header p {
+      color: #873b60;
+      font-size: 16px;
+      margin: 10px 0 22px;
+    }
+
+    /* BOTÕES */
+
+    .botao {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff4f9a, #e60073);
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 10px;
+      box-shadow: 0 5px 12px #c83f7d30;
+      border: none;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .botao:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px #c83f7d40;
+    }
+
+    /* MENU */
+
+    nav {
+      background: white;
+      text-align: center;
+      padding: 18px 10px;
+      box-shadow: 0 3px 12px #c65d8b12;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      display: inline-block;
+      color: var(--pink-dark);
+      text-decoration: none;
+      margin: 5px 12px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+    }
+
+    /* BARRA DE AVISO DE PRAZO E ENTREGA */
+
+    .barra-prazo {
+      background: #fff0a6;
+      border: 2px dashed #f72585;
+      padding: 16px 20px;
+      border-radius: 15px;
+      margin: 20px auto;
+      max-width: 900px;
+      font-weight: bold;
+      color: #873b60;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .barra-prazo div {
+      margin-top: 5px;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    /* CONTEÚDO */
+
+    main {
+      text-align: center;
+      padding: 35px 20px 50px;
+    }
+
+    main > h2,
+    .titulo-secao {
+      color: var(--pink-dark);
+      font-family: Georgia, serif;
+      font-size: 32px;
+    }
+
+    main > p {
+      color: #81546a;
+    }
+
+    section {
+      scroll-margin-top: 85px;
+    }
+
+    /* CARTÕES DE DESTAQUE */
+
+    .destaque {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 35px 25px;
+      background: white;
+      border: 1px solid #f5c9dc;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px #c65d8b12;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .destaque:hover {
+      box-shadow: 0 12px 28px #c65d8b20;
+    }
+
+    .destaque h2 {
+      font-family: Georgia, serif;
+      color: var(--pink);
+      font-size: 27px;
+      margin-top: 0;
+    }
+
+    .destaque p {
+      color: #81546a;
+    }
+
+    .amarelo {
+      background: #fff9d9;
+      border-color: #ffe68a;
+    }
+
+    /* COLEÇÕES PRINCIPAIS */
+
+    .colecoes {
+      max-width: 1100px;
+      margin: 35px auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      text-align: center;
+    }
+
+    .colecao {
+      background: white;
+      border: 1px solid #f5c9dc;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px #c65d8b12;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .colecao:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px #c65d8b20;
+    }
+
+    .colecao img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      background: var(--pink-light);
+    }
+
+    .colecao-conteudo {
+      padding: 18px 12px 22px;
+    }
+
+    .colecao h3 {
+      font-family: Georgia, serif;
+      color: var(--pink-dark);
+      font-size: 20px;
+      margin: 0 0 5px;
+    }
+
+    .colecao p {
+      font-size: 14px;
+      margin: 0;
+      color: #81546a;
+    }
+
+    .numero {
+      display: inline-block;
+      color: #80551a;
+      background: var(--yellow);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 9px;
+    }
+
+    /* SEÇÃO DE PRODUTOS ÚNICOS */
+
+    .busca-container {
+      margin: 20px 0;
+    }
+
+    .busca-input {
+      width: 100%;
+      max-width: 450px;
+      padding: 12px 20px;
+      border: 2px solid var(--pink-light);
+      border-radius: 25px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .busca-input:focus {
+      border-color: var(--pink);
+    }
+
+    .filtros {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .filtro-btn {
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      border: none;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .filtro-btn.ativo, .filtro-btn:hover {
+      background: var(--pink);
+      color: white;
+    }
+
+    .grid-produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card-produto {
+      background: white;
+      border: 1px solid #f5c9dc;
+      border-radius: 15px;
+      padding: 16px;
+      box-shadow: 0 4px 12px #c65d8b10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s;
+    }
+
+    .card-produto:hover {
+      transform: translateY(-3px);
+    }
+
+    .card-produto h4 {
+      font-family: Georgia, serif;
+      color: var(--pink-dark);
+      margin: 0 0 12px 0;
+      font-size: 16px;
+    }
+
+    .card-produto .categoria-tag {
+      font-size: 11px;
+      color: #873b60;
+      background: #fce4ec;
+      padding: 3px 10px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .card-produto .btn-pedir {
+      background: var(--pink);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      background: #fbd0e2;
+      border-top: 2px solid #f4a5c5;
+      color: #873b60;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 25px;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVO */
+
+    @media (max-width: 750px) {
+      .colecoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      header h1 {
+        font-size: 40px;
+      }
+
+      nav a {
+        margin: 5px 8px;
+      }
+
+      main {
+        padding: 30px 14px;
+      }
+
+      .destaque {
+        padding: 27px 17px;
+      }
+
+      .titulo-secao,
+      main > h2 {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .colecoes {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="inicio">
+    <h1>Bia Laços 🎀</h1>
+    <p>Um mundo de delicadeza, cor e encanto.</p>
+    <a href="#colecoes" class="botao">Conheça nossas coleções ♡</a>
+  </header>
+
+  <nav aria-label="Menu principal">
+    <a href="#inicio">Início</a>
+    <a href="#colecoes">Coleções Principais</a>
+    <a href="#produtos-unicos">Produtos & Peças Únicas</a>
+    <a href="#quem-sou-eu">Quem sou eu?</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main>
+
+    <h2>Bem-vinda à Bia Laços!</h2>
+    <p>Detalhes encantadores para deixar cada momento especial.</p>
+
+    <!-- BARRA DE AVISOS (PRAZO E RETIRADA/ENTREGA) -->
+    <div class="barra-prazo">
+      <span>⏳ <strong>Prazo de Produção:</strong> 7 a 10 dias úteis (a partir da confirmação do pagamento).</span>
+      <span>🏡 <strong>Retirada:</strong> No Jardim Tanguá.</span>
+      <span>🛵 <strong>Entregas:</strong> Com taxa via Moto Uber (Uber Flash).</span>
+      <div><em>Todas as peças são artesanais e feitas à mão com amor! ♡</em></div>
+    </div>
+
+    <section id="colecoes">
+      <div class="destaque">
+        <h2>Coleções Principais ♡</h2>
+        <p>
+          Conheça nossas coleções temáticas exclusivas, repletas de carinho e estilo!
+        </p>
+      </div>
+
+      <div class="colecoes">
+        <!-- COLEÇÃO 01 (Seu Ursinho) -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 102440.png" alt="Coleção Meu Ursinho" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 01</span>
+            <h3>Meu Ursinho 🧸</h3>
+            <p>Fofura sem igual em cada detalhe.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 02 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 102602.png" alt="Coleção TEDdy" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 02</span>
+            <h3>Teddy 🐻</h3>
+            <p>Carinho e aconchego para o dia a dia.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 03 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 103339.png" alt="Coleção Ted Chique" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 03</span>
+            <h3>Teddy Chic ✨</h3>
+            <p>Elegância e fofura combinadas.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 04 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 103901.png" alt="Coleção Cherry" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 04</span>
+            <h3>Cherry 🍒</h3>
+            <p>Charme e alegria inspirados em cerejas.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 05 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 104431.png" alt="Coleção Love Jeans" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 05</span>
+            <h3>Love Jeans 💙</h3>
+            <p>Um toque moderno e versátil.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 06 -->
+        <article class="colecao">
+          <img src="Captura de tela 2026-10-12 105122.png" alt="Coleção Jeans Coração" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 06</span>
+            <h3>Jeans Corações 🩵</h3>
+            <p>Detalhes românticos no tecido jeans.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 07 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 105211.png" alt="Coleção Jeans Star" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 07</span>
+            <h3>Jeans Star ⭐</h3>
+            <p>Para quem ama brilhar como uma estrela.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 08 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 105331.png" alt="Coleção Jeans Little Ball Bo Bo" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 08</span>
+            <h3>Jeans Little Bowls 🩵 </h3>
+            <p>Divertido, alegre e inovador.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 09 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 105428.png" alt="Coleção Jardim Encantado" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 09</span>
+            <h3>Jardim Encantado 🌼</h3>
+            <p>Cores e flores inspiradas na natureza.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 10 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 105515.png" alt="Coleção Nomes Especiais" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 10</span>
+            <h3>Nomes Especiais 🔤</h3>
+            <p>Acessórios personalizados com nome.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 11 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 105554.png" alt="Tiara Candy Colors" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 11</span>
+            <h3>Tiaras Candy Colors 🍬</h3>
+            <p>Tons pastéis suaves e muito delicados.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 12 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 105646.png" alt="Coleção Boiadeira" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 12</span>
+            <h3>Boiadeira 🤠</h3>
+            <p>Estilo country cheio de atitude e charme.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 13 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 105809.png" alt="Coleção Mini" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 13</span>
+            <h3>Coleção Minnie 🐭🎀 </h3>
+            <p>Tamanhos perfeitos para os primeiros meses.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 14 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 105837.png" alt="Coleção Hello Kitty" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 14</span>
+            <h3>Hello Kitty 🐱</h3>
+            <p>O universo fofo da gatinha mais amada.</p>
+          </div>
+        </article>
+
+        <!-- COLEÇÃO 15 -->
+        <article class="colecao">
+          <img src="imagens/Captura de tela 2026-10-12 105913.png" alt="Faixa para Bebês" loading="lazy">
+          <div class="colecao-conteudo">
+            <span class="numero">COLEÇÃO 15</span>
+            <h3>Faixas para Bebês 👶</h3>
+            <p>Delicadeza e conforto para os primeiros momentos.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 2. PRODUTOS E PEÇAS ÚNICAS -->
+
+    <section class="destaque" id="produtos-unicos">
+      <h2>Catálogo de Produtos & Peças Únicas 💗</h2>
+      <p>
+        Explore todas as nossas peças individuais, tiaras, faixas e kits em uma categoria completa!
+      </p>
+
+      <!-- BARRA DE BUSCA -->
+      <div class="busca-container">
+        <input type="text" id="campo-busca" class="busca-input" placeholder="🔍 Digite o nome do produto (ex: Valentina, Kit Escolar)..." onkeyup="filtrarProdutos()">
+      </div>
+
+      <!-- BOTÕES DE FILTRO -->
+      <div class="filtros">
+        <button class="filtro-btn ativo" onclick="filtrarCategoria('todas', this)">Todas as Peças</button>
+        <button class="filtro-btn" onclick="filtrarCategoria('tiara', this)">👑 Tiaras</button>
+        <button class="filtro-btn" onclick="filtrarCategoria('faixa', this)">👶 Faixas</button>
+        <button class="filtro-btn" onclick="filtrarCategoria('laco', this)">🎀 Laços & Clips</button>
+        <button class="filtro-btn" onclick="filtrarCategoria('kit', this)">🎓 Kits Escolares</button>
+      </div>
+
+      <!-- GRID DE PRODUTOS ÚNICOS -->
+      <div class="grid-produtos" id="grid-produtos">
+        <!-- Os produtos serão gerados via JavaScript -->
+      </div>
+    </section>
+
+    <!-- SOBRE A MARCA -->
+
+    <section class="destaque amarelo" id="quem-sou-eu">
+      <h2>Quem sou eu? 💗</h2>
+      <p>
+        Especialista em laços há + de 12 anos. <br>
+        Realçando a beleza do RN ao adulto. <br>
+        A Bia Laços é uma marca feita com carinho, criatividade e amor por cada pequeno detalhe. Cada acessório é produzido artesanalmente para tornar os momentos da sua princesa ainda mais inesquecíveis.
+      </p>
+    </section>
+
+    <!-- CONTATO -->
+
+    <section class="destaque" id="contato">
+      <h2>Vamos conversar? 🎀</h2>
+      <p>
+        Gostou de alguma peça ou coleção? Entre em contato para saber mais, personalizar nomes ou fazer sua encomenda diretamente!
+      </p>
+      <a class="botao" id="botao-whatsapp" href="#contato">
+        Fale com a Bia no WhatsApp 💬
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Bia Laços 🎀</strong></p>
+    <p>Um mundo de delicadeza, cor e encanto.</p>
+    <p>⏳ Prazo de produção: 7 a 10 dias úteis após confirmação do pedido.</p>
+    <p>🏡 Retirada no Jardim Tanguá | 🛵 Entregas com taxa via Moto Uber</p>
+    <p>© <span id="ano"></span> Bia Laços — Feito com carinho ♡</p>
+  </footer>
+
+  <script>
+    // Atualiza o ano automaticamente
+    document.getElementById("ano").textContent = new Date().getFullYear();
+
+    // Número do WhatsApp da loja (Substitua pelos números com DDD)
+    const numeroWhatsApp = "5511999999999";
+
+    // Configuração do botão do WhatsApp do rodapé
+    const botaoWhatsApp = document.getElementById("botao-whatsapp");
+    if (numeroWhatsApp && numeroWhatsApp !== "5511999999999") {
+      botaoWhatsApp.href = "https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent("Olá Bia! Gostaria de tirar umas dúvidas sobre as coleções e laços.");
+      botaoWhatsApp.target = "_blank";
+    } else {
+      botaoWhatsApp.addEventListener("click", function(e) {
+        e.preventDefault();
+        alert("Por favor, configure o número do seu WhatsApp no código (variável numeroWhatsApp).");
+      });
+    }
+
+    // Lista Completa de Produtos Únicos
+    const listaProdutos = [
+      // Tiaras (5 primeiras)
+      { nome: "Tiara Valentina", cat: "tiara" },
+      { nome: "Tiara Bianca", cat: "tiara" },
+      { nome: "Tiara Maitê", cat: "tiara" },
+      { nome: "Tiara Sparkle", cat: "tiara" },
+      { nome: "Tiara Ayla", cat: "tiara" },
+
+      // Faixas (5 primeiras)
+      { nome: "Faixa Marjorie", cat: "faixa" },
+      { nome: "Faixa Millena", cat: "faixa" },
+      { nome: "Faixa Lavínia", cat: "faixa" },
+      { nome: "Faixa Rebeca", cat: "faixa" },
+      { nome: "Faixa Marina", cat: "faixa" },
+
+      // Laços & Clips (5 específicos)
+      { nome: "Laço Boutique Luxo", cat: "laco" },
+      { nome: "Laço Glow", cat: "laco" },
+      { nome: "Laço Boutique diversas cores", cat: "laco" },
+      { nome: "Laço Bia II", cat: "laco" },
+      { nome: "Laço Brenda", cat: "laco" },
+
+      // Kits Escolares (Atualizados)
+      { nome: "Kit Escolar Colégio Adventista", cat: "kit" },
+      { nome: "Kit Escolar", cat: "kit" },
+      { nome: "Kit Escolar Rede Municipal", cat: "kit" },
+      { nome: "Kit Escolar Rede Municipal", cat: "kit" }
+    ];
+
+    let categoriaAtual = "todas";
+
+    function renderizarProdutos() {
+      const grid = document.getElementById("grid-produtos");
+      const termoBusca = document.getElementById("campo-busca").value.toLowerCase();
+
+      grid.innerHTML = "";
+
+      const produtosFiltrados = listaProdutos.filter(prod => {
+        const bateCategoria = categoriaAtual === "todas" || prod.cat === categoriaAtual;
+        const bateBusca = prod.nome.toLowerCase().includes(termoBusca);
+        return bateCategoria && bateBusca;
+      });
+
+      if (produtosFiltrados.length === 0) {
+        grid.innerHTML = "<p style='grid-column: 1/-1; color: #873b60;'>Nenhum produto encontrado.</p>";
+        return;
+      }
+
+      produtosFiltrados.forEach(prod => {
+        const card = document.createElement("div");
+        card.className = "card-produto";
+
+        let catNome = "Peça Única";
+        if(prod.cat === "tiara") catNome = "👑 Tiara";
+        if(prod.cat === "faixa") catNome = "👶 Faixa";
+        if(prod.cat === "laco") catNome = "🎀 Laço";
+        if(prod.cat === "kit") catNome = "🎓 Kit Escolar";
+
+        const msgWhatsApp = encodeURIComponent(`Olá Bia! Gostaria de encomendar o produto: ${prod.nome} (${catNome}).`);
+        const linkWa = numeroWhatsApp && numeroWhatsApp !== "5511999999999" 
+          ? `https://wa.me/${numeroWhatsApp}?text=${msgWhatsApp}` 
+          : "#";
+
+        card.innerHTML = `
+          <div>
+            <span class="categoria-tag">${catNome}</span>
+            <h4>${prod.nome}</h4>
+          </div>
+          <a class="btn-pedir" href="${linkWa}" target="_blank" onclick="validarPedido(event, '${prod.nome}')">Pedir no Whats 💬</a>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function filtrarCategoria(cat, btn) {
+      categoriaAtual = cat;
+      document.querySelectorAll(".filtro-btn").forEach(b => b.classList.remove("ativo"));
+      btn.classList.add("ativo");
+      renderizarProdutos();
+    }
+
+    function filtrarProdutos() {
+      renderizarProdutos();
+    }
+
+    function validarPedido(e, nomeProduto) {
+      if (!numeroWhatsApp || numeroWhatsApp === "5511999999999") {
+        e.preventDefault();
+        alert(`Você clicou em "${nomeProduto}". Configure seu número de WhatsApp no código para ativar os pedidos diretos!`);
+      }
+    }
+
+    // Inicializa a exibição dos produtos ao carregar
+    renderizarProdutos();
+  </script>
+
+</body>
+</html>
